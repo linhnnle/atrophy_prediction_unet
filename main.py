@@ -53,9 +53,9 @@ for cv in range(0,5):
     filename_checkpoint = 'model_stroke_' + model_name + '.hdf5'
     filename_model = 'model_stroke_' + model_name + '.json'
     # training
-    # stroke_train_img_segmentation(dir_of_train, flat_train_subj, lr_init=lr_init, loss_mode = loss_mode,gpu = gpu, model_select = model_select, val_list = val_list, extension_data = ext_data, log_dir=log_dir,dir_ckpt=dir_ckpt,filename_checkpoint=filename_checkpoint,filename_model=filename_model,num_epochs=num_epochs,num_contrast_input = num_contrast_input,batch_size=batch_size,num_of_aug=num_of_aug, num_conv_per_pooling=num_conv_per_pooling,num_poolings=num_poolings)
+    stroke_train_img_segmentation(dir_of_train, flat_train_subj, lr_init=lr_init, loss_mode = loss_mode,gpu = gpu, model_select = model_select, val_list = val_list, extension_data = ext_data, log_dir=log_dir,dir_ckpt=dir_ckpt,filename_checkpoint=filename_checkpoint,filename_model=filename_model,num_epochs=num_epochs,num_contrast_input = num_contrast_input,batch_size=batch_size,num_of_aug=num_of_aug, num_conv_per_pooling=num_conv_per_pooling,num_poolings=num_poolings)
     # generate output for test cases
-    # stroke_test(dir_stroke=dir_of_test, dir_source=dir_source, subj_list=subj_list_test, model_name=model_name,dir_ckpt=dir_ckpt,filename_model = filename_model,filename_checkpoint=filename_checkpoint,num_contrast_input = num_contrast_input,output_path = output_path, lower_lim = lower_lim, upper_lim = upper_lim)
+    stroke_test(dir_stroke=dir_of_test, dir_source=dir_source, subj_list=subj_list_test, model_name=model_name,dir_ckpt=dir_ckpt,filename_model = filename_model,filename_checkpoint=filename_checkpoint,num_contrast_input = num_contrast_input,output_path = output_path, lower_lim = lower_lim, upper_lim = upper_lim)
 
 #
 threshold_true = 0.5 # thresholding has been done in preprocess. if preprocess is already 0.9, try low value here.
