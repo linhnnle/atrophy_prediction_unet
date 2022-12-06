@@ -10,12 +10,15 @@ import torchvision
 from torchvision import datasets
 import torchvision.transforms as transforms
 
+from unet import UNet
+
 import os
 import sys
 import time 
 import glob
 import argparse
 import datetime
+
 # Hyperparameters
 num_epochs = 40
 num_classes = 10
@@ -35,7 +38,15 @@ train_dataset = datasets.ImageFolder(root=DATA_PATH, transform=trans)
 train_loader = data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
-model = ConvNet()
+model = UNet(in_channels=1,
+             out_channels=1,
+             n_blocks=5,
+             start_filters=32,
+             activation='relu',
+             normalization='batch',
+             conv_mode='same',
+             dim=3)
+             
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
