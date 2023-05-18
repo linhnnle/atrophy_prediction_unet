@@ -38,7 +38,7 @@ class Trainer:
         else:
             from tqdm import tqdm, trange
 
-        progressbar = trange(self.epochs, desc='Progress')
+        progressbar = trange(self.max_epochs, desc='Progress')
         for i in progressbar:
             """Epoch counter"""
             self.epoch += 1  # epoch counter
